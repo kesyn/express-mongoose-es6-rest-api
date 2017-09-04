@@ -1,0 +1,13 @@
+{
+  "presets": ["es2015", "stage-0", "react", "next/babel"],
+  "plugins": [["transform-runtime", {
+    "polyfill": true,
+    "regenerator": true
+  }]],
+  "env": {
+    "production": {
+      "presets": [["es2015", { "modules": false }], "stage-0", "react", "next/babel"]
+    }
+  }
+}
+

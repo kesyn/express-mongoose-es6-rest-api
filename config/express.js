@@ -13,6 +13,12 @@ import winstonInstance from './winston';
 import routes from '../server/routes/index.route';
 import config from './config';
 import APIError from '../server/helpers/APIError';
+const dev = process.env.NODE_ENV!=='production';
+
+var next = require('next')
+global.nextApp = next({dev})
+const handle = nextApp.getRequestHandler();
+nextApp.prepare();
 
 const app = express();
 
